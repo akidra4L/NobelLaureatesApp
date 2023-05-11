@@ -27,6 +27,10 @@ class LaureateCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func configureView(laureate: String) {
+        self.laureateLabel.text = laureate
+    }
+    
     private func setUI() {
         self.backgroundColor = .white
         [laureateLabel].forEach { self.addSubview($0) }

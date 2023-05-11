@@ -13,6 +13,8 @@
 		159153272A0D17CD00222305 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159153252A0D17CD00222305 /* LaunchScreen.storyboard */; };
 		1591532F2A0D1A7700222305 /* CustomConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1591532E2A0D1A7700222305 /* CustomConstraints.swift */; };
 		159153322A0D1CC400222305 /* LaureateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159153312A0D1CC400222305 /* LaureateCell.swift */; };
+		159A8E832A0D66BB0034B71C /* LaureateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159A8E822A0D66BB0034B71C /* LaureateData.swift */; };
+		159A8E852A0D670D0034B71C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159A8E842A0D670D0034B71C /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		159153282A0D17CD00222305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1591532E2A0D1A7700222305 /* CustomConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConstraints.swift; sourceTree = "<group>"; };
 		159153312A0D1CC400222305 /* LaureateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaureateCell.swift; sourceTree = "<group>"; };
+		159A8E822A0D66BB0034B71C /* LaureateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaureateData.swift; sourceTree = "<group>"; };
+		159A8E842A0D670D0034B71C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				1591531A2A0D17CC00222305 /* AppDelegate.swift */,
 				1591531E2A0D17CC00222305 /* ViewController.swift */,
 				1591532E2A0D1A7700222305 /* CustomConstraints.swift */,
+				159A8E842A0D670D0034B71C /* APIManager.swift */,
+				159A8E822A0D66BB0034B71C /* LaureateData.swift */,
 				159153232A0D17CD00222305 /* Assets.xcassets */,
 				159153252A0D17CD00222305 /* LaunchScreen.storyboard */,
 				159153282A0D17CD00222305 /* Info.plist */,
@@ -145,10 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				159A8E852A0D670D0034B71C /* APIManager.swift in Sources */,
 				159153322A0D1CC400222305 /* LaureateCell.swift in Sources */,
 				1591531F2A0D17CC00222305 /* ViewController.swift in Sources */,
 				1591532F2A0D1A7700222305 /* CustomConstraints.swift in Sources */,
 				1591531B2A0D17CC00222305 /* AppDelegate.swift in Sources */,
+				159A8E832A0D66BB0034B71C /* LaureateData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
