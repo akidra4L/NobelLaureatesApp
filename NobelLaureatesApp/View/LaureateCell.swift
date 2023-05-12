@@ -9,6 +9,13 @@ import UIKit
 
 class LaureateCell: UITableViewCell {
     
+    var laureate: LaureateElement? {
+        didSet {
+            laureateLabel.text = laureate?.fullName.en
+            categoryOfLaureate.text = laureate?.nobelPrizes[0].category.en
+        }
+    }
+    
     // MARK: - Properties
     private let separatorView: UIView = {
         let separatorView = UIView()
@@ -39,12 +46,7 @@ class LaureateCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Methods
-    public func configureView(laureate: LaureateElement) {
-        self.laureateLabel.text = laureate.fullName.en
-        self.categoryOfLaureate.text = laureate.nobelPrizes[0].category.en
-    }
-    
+    // MARK: - Methods    
     private func setUI() {
         self.backgroundColor = .white
         [separatorView, laureateLabel, categoryOfLaureate].forEach { self.addSubview($0) }

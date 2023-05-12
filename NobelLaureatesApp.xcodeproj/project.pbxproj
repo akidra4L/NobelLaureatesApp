@@ -60,12 +60,12 @@
 		159153192A0D17CC00222305 /* NobelLaureatesApp */ = {
 			isa = PBXGroup;
 			children = (
-				159153302A0D1CA300222305 /* Components */,
 				1591531A2A0D17CC00222305 /* AppDelegate.swift */,
-				1591531E2A0D17CC00222305 /* ViewController.swift */,
 				1591532E2A0D1A7700222305 /* CustomConstraints.swift */,
 				159A8E842A0D670D0034B71C /* APIManager.swift */,
-				159A8E822A0D66BB0034B71C /* LaureateData.swift */,
+				159CCBC42A0E4289007A61F2 /* Model */,
+				159153302A0D1CA300222305 /* View */,
+				159CCBC62A0E42A9007A61F2 /* Controller */,
 				159153232A0D17CD00222305 /* Assets.xcassets */,
 				159153252A0D17CD00222305 /* LaunchScreen.storyboard */,
 				159153282A0D17CD00222305 /* Info.plist */,
@@ -73,12 +73,28 @@
 			path = NobelLaureatesApp;
 			sourceTree = "<group>";
 		};
-		159153302A0D1CA300222305 /* Components */ = {
+		159153302A0D1CA300222305 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				159153312A0D1CC400222305 /* LaureateCell.swift */,
 			);
-			path = Components;
+			path = View;
+			sourceTree = "<group>";
+		};
+		159CCBC42A0E4289007A61F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				159A8E822A0D66BB0034B71C /* LaureateData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		159CCBC62A0E42A9007A61F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1591531E2A0D17CC00222305 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

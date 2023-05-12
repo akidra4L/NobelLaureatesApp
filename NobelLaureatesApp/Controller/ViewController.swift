@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Laureates"
         self.view.backgroundColor = .white
         
         [tableView].forEach { self.view.addSubview($0) }
@@ -58,8 +59,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
                 as? LaureateCell else { return UITableViewCell() }
-        let laureate = laureatesData[indexPath.row]
-        cell.configureView(laureate: laureate)
+        cell.laureate = laureatesData[indexPath.row]
         return cell
     }
 }
