@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     private var tableView: UITableView = {
         var tableView = UITableView()
+        tableView.separatorStyle = .none
         return tableView
     } ()
 
