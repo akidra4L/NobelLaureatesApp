@@ -12,15 +12,14 @@ class APIManager {
     
     let urlString = "https://api.nobelprize.org/2.1/laureates"
     
-    public func getLaureates(completion: @escaping ([String]) -> Void) {
+    public func getLaureates(completion: @escaping ([LaureateElement]) -> Void) {
         guard let url = URL(string: urlString) else { return }
         let request = URLRequest(url: url)
         
         let session = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data else { return }
             if let laureatesData = try? JSONDecoder().decode(LaureateData.self, from: data) {
-                let listOfNames = laureatesData.laureates.map { $0.knownName.en }
-                completion(listOfNames)
+                completion(laureatesData.laureates)
             } else {
                 print("error")
             }

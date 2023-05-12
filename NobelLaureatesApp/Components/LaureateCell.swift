@@ -9,12 +9,17 @@ import UIKit
 
 class LaureateCell: UITableViewCell {
     
-    private var laureateLink: String?
-    
     private let laureateLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = .systemFont(ofSize: 17, weight: .regular)
+        return label
+    } ()
+    
+    private let categoryOfLaureate: UILabel = {
+        let label = UILabel()
+        label.textColor = .lightGray
+        label.font = .systemFont(ofSize: 12)
         return label
     } ()
     
@@ -27,17 +32,20 @@ class LaureateCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func configureView(laureate: String) {
-        self.laureateLabel.text = laureate
+    public func configureView(laureate: LaureateElement) {
+        self.laureateLabel.text = laureate.fullName.en
+        self.categoryOfLaureate.text = laureate.nobelPrizes[0].category.en
     }
     
     private func setUI() {
         self.backgroundColor = .white
-        [laureateLabel].forEach { self.addSubview($0) }
+        [laureateLabel, categoryOfLaureate].forEach { self.addSubview($0) }
         setConstraints()
     }
     
     private func setConstraints() {
         laureateLabel.anchor(top: self.topAnchor, left: self.leftAnchor, paddingTop: 12, paddingLeft: 16)
+        
+        categoryOfLaureate.anchor(top: laureateLabel.bottomAnchor, left: self.leftAnchor, paddingTop: 4, paddingLeft: 16)
     }
 }
