@@ -10,7 +10,6 @@ import Foundation
 // MARK: - Laureate
 struct LaureateData: Codable {
     let laureates: [LaureateElement]
-    let meta: Meta
     let links: Links
 }
 
@@ -46,35 +45,6 @@ struct Place: Codable {
 struct City: Codable {
     let en: String
     let no, se: String?
-    let sameAs: SameAs?
-}
-
-enum SameAs: Codable {
-    case string(String)
-    case stringArray([String])
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if let x = try? container.decode([String].self) {
-            self = .stringArray(x)
-            return
-        }
-        if let x = try? container.decode(String.self) {
-            self = .string(x)
-            return
-        }
-        throw DecodingError.typeMismatch(SameAs.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for SameAs"))
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        switch self {
-        case .string(let x):
-            try container.encode(x)
-        case .stringArray(let x):
-            try container.encode(x)
-        }
-    }
 }
 
 // MARK: - Death
@@ -185,10 +155,4 @@ struct Links: Codable {
         case linksSelf = "self"
         case next, last
     }
-}
-
-// MARK: - Meta
-struct Meta: Codable {
-    let offset, limit, count: Int
-    let terms, license, disclaimer: String
 }
