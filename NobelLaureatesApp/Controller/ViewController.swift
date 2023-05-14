@@ -41,11 +41,9 @@ class ViewController: UIViewController {
     
     private func getAllLaureates() {
         APIManager.shared.getLaureates { [weak self] data in
-            DispatchQueue.main.async {
-                guard let self else { return }
-                self.laureatesData = data
-                self.tableView.reloadData()
-            }
+            guard let self else { return }
+            self.laureatesData = data
+            self.tableView.reloadData()
         }
     }
 }

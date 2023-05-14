@@ -19,7 +19,9 @@ class APIManager {
         let session = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data else { return }
             if let laureatesData = try? JSONDecoder().decode(LaureateData.self, from: data) {
-                completion(laureatesData.laureates)
+                DispatchQueue.main.async {
+                    completion(laureatesData.laureates)
+                }
             } else {
                 print("error")
             }
