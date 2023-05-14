@@ -12,7 +12,7 @@ class LaureateCell: UITableViewCell {
     var laureate: LaureateElement? {
         didSet {
             laureateLabel.text = laureate?.fullName.en
-            categoryOfLaureate.text = laureate?.nobelPrizes[0].category.en
+            categoryOfLaureateLabel.text = laureate?.nobelPrizes[0].category.en
         }
     }
     
@@ -30,7 +30,7 @@ class LaureateCell: UITableViewCell {
         return label
     } ()
     
-    private let categoryOfLaureate: UILabel = {
+    private let categoryOfLaureateLabel: UILabel = {
         let label = UILabel()
         label.textColor = .lightGray
         label.font = .systemFont(ofSize: 12)
@@ -49,14 +49,14 @@ class LaureateCell: UITableViewCell {
     // MARK: - Methods    
     private func setUI() {
         self.backgroundColor = .white
-        [separatorView, laureateLabel, categoryOfLaureate].forEach { self.addSubview($0) }
+        [separatorView, laureateLabel, categoryOfLaureateLabel].forEach { self.addSubview($0) }
         setConstraints()
     }
     
     private func setConstraints() {
         laureateLabel.anchor(top: self.topAnchor, left: self.leftAnchor, paddingTop: 12, paddingLeft: 16)
         
-        categoryOfLaureate.anchor(top: laureateLabel.bottomAnchor, left: self.leftAnchor, paddingTop: 4, paddingLeft: 16)
+        categoryOfLaureateLabel.anchor(top: laureateLabel.bottomAnchor, left: self.leftAnchor, paddingTop: 4, paddingLeft: 16)
         
         separatorView.anchor(right: self.rightAnchor, bottom: self.bottomAnchor, left: self.leftAnchor, paddingRight: 16, paddingLeft: 16, height: 1)
     }
