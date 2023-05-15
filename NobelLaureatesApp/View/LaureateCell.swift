@@ -9,9 +9,9 @@ import UIKit
 
 class LaureateCell: UITableViewCell {
     
-    var laureate: LaureateElement? {
+    public var laureate: LaureateElement? {
         didSet {
-            laureateLabel.text = laureate?.fullName.en
+            laureateLabel.text = laureate?.givenName.en
             categoryOfLaureateLabel.text = laureate?.nobelPrizes[0].category.en
         }
     }

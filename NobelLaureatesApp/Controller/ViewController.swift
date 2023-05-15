@@ -27,10 +27,11 @@ class ViewController: UIViewController {
         setConstraints()
         initalizeTableView()
         getAllLaureates()
+        customBackButton()
     }
     
     private func setConstraints() {
-        tableView.anchor(top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, paddingRight: 16, paddingBottom: 100, paddingLeft: 16)
+        tableView.anchor(top: view.topAnchor, right: view.rightAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, paddingRight: 16, paddingBottom: 50, paddingLeft: 16)
     }
     
     private func initalizeTableView() {
@@ -45,6 +46,11 @@ class ViewController: UIViewController {
             self.laureatesData = data
             self.tableView.reloadData()
         }
+    }
+    
+    private func customBackButton() {
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
     }
 }
 
@@ -66,5 +72,12 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 64
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let laureateVC = LaureateViewController()
+        laureateVC.laureate = laureatesData[indexPath.row]
+        navigationController?.pushViewController(laureateVC, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
